@@ -6,7 +6,7 @@ const { defineConfig, devices } = require('@playwright/test');
  */
 
 Object.assign(global, {
-  BASE_URL: process.env.BASE_URL,
+  BASE_URL: process.env.BASE_URL ?? 'https://playwright.dev/',
 });
 module.exports = defineConfig({
   testDir: './tests',
