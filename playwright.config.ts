@@ -18,7 +18,7 @@ module.exports = defineConfig({
   /* Reporter to use. See https://playwright.dev/docs/test-reporters 
   Set to:'never', change to 'always' to launch report automatically after execution */
   reporter: [ 
-    ['html', { open: 'never'}, {outputFile: 'results.html' }],
+    ['html', { open: 'never'}],
     ['junit', {outputFile: 'results.xml'}] //required for Azure DevOps Pipeline
   ],
   
