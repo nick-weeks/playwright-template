@@ -25,6 +25,17 @@ jobs:
           npx playwright install --with-deps
         displayName: "Playwright Install"
 
+      - name: Set up cache
+        id: cache
+        uses: actions/cache@v4
+        with:
+          key: cache/${{github.repository}}/${github.ref}
+          restore-keys: cache/${{github.repository}}/refs/heads/master
+          path: .test/**
+      - name: Initialize snapshots
+        if: ${{steps.cache.outputs.cache-hit != 'true'}}
+        run: npx playwright test --update-snapshots
+        
       - script: |
           set BASE_URL=${{ parameters.BASE_URL }}
           set CI=true

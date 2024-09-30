@@ -4,6 +4,7 @@ const { defineConfig, devices } = require('@playwright/test');
 /**
  * @see https://playwright.dev/docs/test-configuration
  */
+const isCI = !!process.env.CI;
 
 Object.assign(global, {
   BASE_URL: process.env.BASE_URL ?? 'https://playwright.dev/',
@@ -18,11 +19,17 @@ module.exports = defineConfig({
   retries: process.env.CI ? 2 : 0,
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 1 : undefined,
-
+  outputDir: '.test/spec/output',
+  snapshotPathTemplate: '.test/spec/snaps/{projectName}/{testFilePath}/{arg}{ext}',
+  testMatch: '*.spec.{ts,tsx}',
   /* Reporter to use. See https://playwright.dev/docs/test-reporters 
   Set to:'never', change to 'always' to launch report automatically after execution */
   reporter: [ 
-    ['html', { open: 'never'}],
+      ['html', {
+        outputFolder: '.test/spec/results', 
+        open: 'never',
+      }],
+      isCI ? ['github'] : ['line'],
     ['junit', {outputFile: 'results.xml'}] //required for Azure DevOps Pipeline
   ],
   
