@@ -4,6 +4,10 @@ const { defineConfig, devices } = require('@playwright/test');
 /**
  * @see https://playwright.dev/docs/test-configuration
  */
+
+Object.assign(global, {
+  BASE_URL: process.env.BASE_URL,
+});
 module.exports = defineConfig({
   testDir: './tests',
   /* Run tests in files in parallel */
