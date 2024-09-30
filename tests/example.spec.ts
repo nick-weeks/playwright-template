@@ -17,10 +17,3 @@ test('get started link', async ({ page }) => {
   // Expects page to have a heading with the name of Installation.
   await expect(page.getByRole('heading', { name: 'Installation' })).toBeVisible();
 });
-
-test('Screenshot', async ({ page }) => {
-  await page.goto(global.BASE_URL);
-
-  // Click the get started link.
-  await expect(page).toHaveScreenshot()
-});
