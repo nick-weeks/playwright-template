@@ -32,6 +32,7 @@ stages:
             BASE_URL: ${{ variables.ProdURL }}
     - job: publish
       displayName: Publish Results
+      dependsOn: [qa,prod]
       steps:
         - template: publish.yml
 
