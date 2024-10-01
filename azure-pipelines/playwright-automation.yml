@@ -27,7 +27,7 @@ stages:
       - template: playwright-template.yml
         parameters:
           BASE_URL: ${{ variables.ProdURL }}
-  - stage: Publish Results
+  - stage: Publish_Results
     displayName: 'Publish Automation Results'
     dependsOn: [qa, Prod]
     jobs:
