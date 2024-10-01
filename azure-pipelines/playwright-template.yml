@@ -26,7 +26,7 @@ jobs:
         displayName: "Playwright Install"
         
       - script: |
-          set BASE_URL=${{ variables.DevURL }}
+          set BASE_URL=${{ parameters.BASE_URL }}
           set CI=true
           set PLAYWRIGHT_JUNIT_OUTPUT_NAME=results.xml
           npx playwright test --workers=1
