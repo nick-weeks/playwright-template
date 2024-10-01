@@ -13,26 +13,17 @@ name: $(Build.BuildId)
 
 stages:
 
-  - stage: Test
-    displayName: 'Run Automation Test'
+  - stage: qa
+    displayName: 'Run Automation Test - QA'
     dependsOn: []
     jobs:
-
-    - job: qa
-      displayName: Run QA Tests
-      steps:
-        - template: playwright-template.yml
-          parameters:
-            BASE_URL: ${{ variables.DevURL }}
-    - job: prod
-      displayName: Run Prod Test
-      steps:
-        - template: playwright-template.yml
-          parameters:
-            BASE_URL: ${{ variables.ProdURL }}
-    - job: publish
-      displayName: Publish Results
-      dependsOn: [qa,prod]
-      steps:
-        - template: publish.yml
-
+      - template: playwright-template.yml
+        parameters:
+          BASE_URL: ${{ variables.DevURL }}
+  - stage: Prod
+    displayName: 'Run Automation Test - Prod'
+    dependsOn: []
+    jobs:
+      - template: playwright-template.yml
+        parameters:
+          BASE_URL: ${{ variables.ProdURL }}
