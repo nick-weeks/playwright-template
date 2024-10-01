@@ -5,27 +5,27 @@ jobs:
     steps:
 
       - task: ArchiveFiles@2
-              displayName: 'Add playwright-report to Archive'
-              inputs:
-                rootFolderOrFile: '$(Pipeline.Workspace)/s/playwright-report/'
-                archiveFile: '$(Agent.TempDirectory)/$(Build.BuildId)_$(System.JobAttempt)$(System.StageAttempt)$(System.StageName).zip'
+        displayName: 'Add playwright-report to Archive'
+        inputs:
+          rootFolderOrFile: '$(Pipeline.Workspace)/s/playwright-report/'
+          archiveFile: '$(Agent.TempDirectory)/$(Build.BuildId)_$(System.JobAttempt)$(System.StageAttempt)$(System.StageName).zip'
 
-            - task: ArchiveFiles@2
-              displayName: 'Add test-results to Archive'
-              inputs:
-                rootFolderOrFile: '$(Pipeline.Workspace)/s/test-results/'
-                archiveFile: '$(Agent.TempDirectory)/$(Build.BuildId)_$(System.JobAttempt)$(System.StageAttempt)$(System.StageName).zip'
-                replaceExistingArchive: false
+      - task: ArchiveFiles@2
+        displayName: 'Add test-results to Archive'
+        inputs:
+          rootFolderOrFile: '$(Pipeline.Workspace)/s/test-results/'
+          archiveFile: '$(Agent.TempDirectory)/$(Build.BuildId)_$(System.JobAttempt)$(System.StageAttempt)$(System.StageName).zip'
+          replaceExistingArchive: false
 
-            - task: PublishPipelineArtifact@1
-              displayName: 'Publish Pipeline Artifacts'
-              inputs:
-                targetPath: '$(Agent.TempDirectory)/$(Build.BuildId)_$(System.JobAttempt)$(System.StageAttempt)$(System.StageName).zip'
-                artifact: pipeline-artifacts
+      - task: PublishPipelineArtifact@1
+        displayName: 'Publish Pipeline Artifacts'
+        inputs:
+          targetPath: '$(Agent.TempDirectory)/$(Build.BuildId)_$(System.JobAttempt)$(System.StageAttempt)$(System.StageName).zip'
+          artifact: pipeline-artifacts
 
-            - task: PublishTestResults@2
-              inputs:
-                testResultsFormat: 'JUnit'
-                testResultsFiles: '$(Pipeline.Workspace)/s/results.xml'
-                testRunTitle: 'Playwright ADO Demo - $(System.StageName)'
-              displayName: 'Publish Test Results'
+      - task: PublishTestResults@2
+        inputs:
+          testResultsFormat: 'JUnit'
+          testResultsFiles: '$(Pipeline.Workspace)/s/results.xml'
+          testRunTitle: 'Playwright ADO Demo - $(System.StageName)'
+        displayName: 'Publish Test Results'
