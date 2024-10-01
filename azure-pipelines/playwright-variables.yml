@@ -1,3 +1,7 @@
 variables:
   - name: Environment
     type: string
+    default: ''
+  - name: DevURL
+    type: string
+    default: 'https://playwright.dev/'

@@ -19,4 +19,4 @@ stages:
     jobs:
       - template: playwright-template.yml
         parameters:
-          BASE_URL: 'https://playwright.dev/'
+          BASE_URL: ${{parameters.BASE_URL}}
