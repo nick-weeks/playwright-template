@@ -19,17 +19,13 @@ module.exports = defineConfig({
   retries: process.env.CI ? 2 : 0,
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 1 : undefined,
-  outputDir: '.test/spec/output',
-  snapshotPathTemplate: '.test/spec/snaps/{projectName}/{testFilePath}/{arg}{ext}',
-  testMatch: '*.spec.{ts,tsx}',
+
   /* Reporter to use. See https://playwright.dev/docs/test-reporters 
   Set to:'never', change to 'always' to launch report automatically after execution */
   reporter: [ 
       ['html', {
-        outputFolder: '.test/spec/results', 
         open: 'never',
       }],
-      isCI ? ['github'] : ['line'],
     ['junit', {outputFile: 'results.xml'}] //required for Azure DevOps Pipeline
   ],
   
@@ -42,10 +38,10 @@ module.exports = defineConfig({
 
     /* Collect trace when retrying the failed test. 
     See https://playwright.dev/docs/trace-viewer */
-    trace: 'on',
+    trace: 'off',
     screenshot: 'only-on-failure',
     video: {
-      mode: 'on'
+      mode: 'off'
     },
     headless: true,
     viewport: { width: 1900, height: 940 },

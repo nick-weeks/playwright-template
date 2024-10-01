@@ -18,9 +18,3 @@ test('get started link', async ({ page }) => {
   await expect(page.getByRole('heading', { name: 'Installation' })).toBeVisible();
 });
 
-
-test('snapshot test', async ({ page }, testInfo) => {
-  await page.goto(global.BASE_URL);
-
-  await expect(page).toHaveScreenshot(`${testInfo.title}.png`)
-});

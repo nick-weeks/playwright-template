@@ -1,11 +1,109 @@
-<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="2.4079369999989866">
-<testsuite name="example.spec.ts" timestamp="2024-09-30T13:52:13.483Z" hostname="chromium" tests="1" failures="0" skipped="0" time="1.308" errors="0">
-<testcase name="snapshot test" classname="example.spec.ts" time="1.308">
+<testsuites id="" name="" tests="9" failures="3" skipped="0" errors="0" time="36.488768">
+<testsuite name="example.spec.ts" timestamp="2024-10-01T09:49:07.135Z" hostname="chromium" tests="3" failures="0" skipped="0" time="5.335" errors="0">
+<testcase name="has title" classname="example.spec.ts" time="1.295">
+</testcase>
+<testcase name="get started link" classname="example.spec.ts" time="2.138">
+</testcase>
+<testcase name="snapshot test" classname="example.spec.ts" time="1.902">
+</testcase>
+</testsuite>
+<testsuite name="example.spec.ts" timestamp="2024-10-01T09:49:07.135Z" hostname="firefox" tests="3" failures="1" skipped="0" time="8.561" errors="0">
+<testcase name="has title" classname="example.spec.ts" time="2.515">
+</testcase>
+<testcase name="get started link" classname="example.spec.ts" time="3.005">
+</testcase>
+<testcase name="snapshot test" classname="example.spec.ts" time="3.041">
+<failure message="example.spec.ts:22:5 snapshot test" type="FAILURE">
+<![CDATA[  [firefox] › example.spec.ts:22:5 › snapshot test ─────────────────────────────
+
+    Error: A snapshot doesn't exist at /home/nick-weeks/codeDevelopment/azuredevop-playwright-test/tests/example.spec.ts-snapshots/snapshot-test-firefox-linux.png, writing actual.
+
+      23 |   await page.goto(global.BASE_URL);
+      24 |
+    > 25 |   await expect(page).toHaveScreenshot(`${testInfo.title}.png`)
+         |   ^
+      26 | });
+
+        at /home/nick-weeks/codeDevelopment/azuredevop-playwright-test/tests/example.spec.ts:25:3
+
+    attachment #1: snapshot-test-expected.png (image/png) ──────────────────────
+    tests/example.spec.ts-snapshots/snapshot-test-firefox-linux.png
+    ────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: snapshot-test-actual.png (image/png) ────────────────────────
+    test-results/example-snapshot-test-firefox/snapshot-test-actual.png
+    ────────────────────────────────────────────────────────────────────────────
+
+    attachment #3: screenshot (image/png) ──────────────────────────────────────
+    test-results/example-snapshot-test-firefox/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
 <system-out>
 <![CDATA[
-[[ATTACHMENT|test-results/example-snapshot-test-chromium/video.webm]]
+[[ATTACHMENT|tests/example.spec.ts-snapshots/snapshot-test-firefox-linux.png]]
 
-[[ATTACHMENT|test-results/example-snapshot-test-chromium/trace.zip]]
+[[ATTACHMENT|test-results/example-snapshot-test-firefox/snapshot-test-actual.png]]
+
+[[ATTACHMENT|test-results/example-snapshot-test-firefox/test-failed-1.png]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="example.spec.ts" timestamp="2024-10-01T09:49:07.135Z" hostname="webkit" tests="3" failures="2" skipped="0" time="38.959" errors="0">
+<testcase name="has title" classname="example.spec.ts" time="1.969">
+</testcase>
+<testcase name="get started link" classname="example.spec.ts" time="30.278">
+<failure message="example.spec.ts:11:5 get started link" type="FAILURE">
+<![CDATA[  [webkit] › example.spec.ts:11:5 › get started link ───────────────────────────
+
+    Test timeout of 30000ms exceeded.
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────
+    test-results/example-get-started-link-webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/example-get-started-link-webkit/test-failed-1.png]]
+]]>
+</system-out>
+</testcase>
+<testcase name="snapshot test" classname="example.spec.ts" time="6.712">
+<failure message="example.spec.ts:22:5 snapshot test" type="FAILURE">
+<![CDATA[  [webkit] › example.spec.ts:22:5 › snapshot test ──────────────────────────────
+
+    Error: Timeout 5000ms exceeded.
+
+
+    Call log:
+      - expect.toHaveScreenshot(snapshot test.png) with timeout 5000ms
+      -   generating new stable screenshot expectation
+      - taking page screenshot
+      -   disabled all CSS animations
+      - waiting for fonts to load...
+      - fonts loaded
+      - waiting 100ms before taking screenshot
+      - Timeout 5000ms exceeded.
+
+
+      23 |   await page.goto(global.BASE_URL);
+      24 |
+    > 25 |   await expect(page).toHaveScreenshot(`${testInfo.title}.png`)
+         |                      ^
+      26 | });
+
+        at /home/nick-weeks/codeDevelopment/azuredevop-playwright-test/tests/example.spec.ts:25:22
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────
+    test-results/example-snapshot-test-webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results/example-snapshot-test-webkit/test-failed-1.png]]
 ]]>
 </system-out>
 </testcase>
