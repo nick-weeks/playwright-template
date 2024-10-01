@@ -1,6 +1,6 @@
 jobs:
 
-  - job: Publish Results
+  - job: Publish_Results
     displayName: 'Publish Test Results'
     steps:
 
