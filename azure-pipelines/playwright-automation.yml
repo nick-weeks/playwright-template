@@ -1,6 +1,9 @@
 pool:
   vmImage: 'windows-latest'
 
+variables:
+  -template: playwright-variables.yml
+
 trigger:
   branches:
     include:
