@@ -5,3 +5,6 @@ variables:
   - name: DevURL
     type: string
     default: 'https://playwright.dev/'
+  -name: ProdURL
+    type: string
+    default: 'https://playwright.dev'
