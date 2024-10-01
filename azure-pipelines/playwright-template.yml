@@ -1,7 +1,11 @@
 parameters:
   - name: BASE_URL
     type: string
-    
+
+variables:
+  name: Environment
+  type: string
+
 jobs:
 
   - job: test
