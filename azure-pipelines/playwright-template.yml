@@ -1,33 +1,60 @@
-name: Visual Tests
-
-on:
-  push:
-    branches:
-      - "*"
-
-  pull_request:
-    branches:
-      - "*"
+parameters:
+  - name: BASE_URL
+    type: string
 
 jobs:
-  run-tests:
-    runs-on: ubuntu-latest
-    timeout-minutes: 15
+
+  - job: test
+    displayName: Run Playwright Tests
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+    
+      - download: none
+      
+      - checkout: self
 
-      - name: Set up Node
-        uses: actions/setup-node@v3
-        with:
-          cache: pnpm
-          node-version-file: .nvmrc
-          check-latest: true
+      - task: NodeTool@0
+        displayName: 'Use Node version 16'
+        inputs:
+          versionSpec: 16.x
 
-      - name: Install deps
-        run: |
-          npm install
-          npx playwright install
+      - script: |
+          npm ci
+        displayName: "NPM Install"
 
-      - name: Test
-        run: npx playwright test --ignore-snapshots
+      - script: |
+          npx playwright install --with-deps
+        displayName: "Playwright Install"
+        
+      - script: |
+          set BASE_URL=${{ parameters.BASE_URL }}
+          set CI=true
+          set PLAYWRIGHT_JUNIT_OUTPUT_NAME=results.xml
+          npx playwright test --workers=1
+        displayName: "Run Playwright Tests"
+        continueOnError: true
+
+      - task: ArchiveFiles@2
+        displayName: 'Add playwright-report to Archive'
+        inputs:
+          rootFolderOrFile: '$(Pipeline.Workspace)/s/playwright-report/'
+          archiveFile: '$(Agent.TempDirectory)/$(Build.BuildId)_$(System.JobAttempt)$(System.StageAttempt).zip'
+
+      - task: ArchiveFiles@2
+        displayName: 'Add test-results to Archive'
+        inputs:
+          rootFolderOrFile: '$(Pipeline.Workspace)/s/test-results/'
+          archiveFile: '$(Agent.TempDirectory)/$(Build.BuildId)_$(System.JobAttempt)$(System.StageAttempt).zip'
+          replaceExistingArchive: false
+
+      - task: PublishPipelineArtifact@1
+        displayName: 'Publish Pipeline Artifacts'
+        inputs:
+          targetPath: '$(Agent.TempDirectory)/$(Build.BuildId)_$(System.JobAttempt)$(System.StageAttempt).zip'
+          artifact: pipeline-artifacts
+
+      - task: PublishTestResults@2
+        inputs:
+          testResultsFormat: 'JUnit'
+          testResultsFiles: '$(Pipeline.Workspace)/s/results.xml'
+          testRunTitle: 'Playwright ADO Demo - $(System.StageName)'
+        displayName: 'Publish Test Results'
