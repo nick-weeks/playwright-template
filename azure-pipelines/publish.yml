@@ -1,7 +1,7 @@
 jobs:
 
   - job: Publish Results
-    displayName: Publish Test Results
+    displayName: 'Publish Test Results'
     steps:
 
       - task: ArchiveFiles@2
