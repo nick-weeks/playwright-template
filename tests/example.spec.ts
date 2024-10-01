@@ -10,7 +10,7 @@ test('has title', async ({ page }) => {
 
 test('get started link', async ({ page }) => {
   await page.goto(global.BASE_URL);
-
+  console.log(global.ENV)
   // Click the get started link.
   await page.getByRole('link', { name: 'Get started' }).click();
 

@@ -8,6 +8,7 @@ const isCI = !!process.env.CI;
 
 Object.assign(global, {
   BASE_URL: process.env.BASE_URL ?? 'https://playwright.dev/',
+  ENV: process.env.ENVIRONMENT ?? '',
 });
 module.exports = defineConfig({
   testDir: './tests',
