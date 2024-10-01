@@ -46,12 +46,6 @@ jobs:
           archiveFile: '$(Agent.TempDirectory)/$(Build.BuildId)_$(System.JobAttempt)$(System.StageAttempt)$(System.StageName).zip'
           replaceExistingArchive: false
 
-      - task: PublishPipelineArtifact@1
-        displayName: 'Publish Pipeline Artifacts'
-        inputs:
-          targetPath: '$(Agent.TempDirectory)/$(Build.BuildId)_$(System.JobAttempt)$(System.StageAttempt)$(System.StageName).zip'
-          artifact: pipeline-artifacts
-
       - task: PublishTestResults@2
         inputs:
           testResultsFormat: 'JUnit'
