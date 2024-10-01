@@ -3,8 +3,8 @@ parameters:
     type: string
 
 variables:
-  name: Environment
-  type: string
+  - name: Environment
+    type: string
 
 jobs:
 
