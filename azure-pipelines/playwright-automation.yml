@@ -25,6 +25,6 @@ stages:
         - template: playwright-template.yml
           parameters:
             BASE_URL: ${{ variables.ProdURL }}
-      -jobs:
+      - job:
         - template: publish.yml
-        
+
