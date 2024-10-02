@@ -11,6 +11,4 @@ variables:
   -name: TEST_USER_EMAIL
     type: string
     default: ''
-  -name: TEST_USER_PASSWORD
-    type: string
-    default: $(TEST_USER_PASSWORD)
+  TEST_USER_PASSWORD: $(TEST_USER_PASSWORD)

@@ -29,7 +29,6 @@ jobs:
         
       - script: |
           set BASE_URL=${{ parameters.BASE_URL }}
-          set TEST_USER_PASSWORD = ${{parameters.TEST_USER_PASSWORD}}
           set CI=true
           set PLAYWRIGHT_JUNIT_OUTPUT_NAME=results.xml
           npx playwright test --workers=1
