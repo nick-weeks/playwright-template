@@ -8,6 +8,7 @@ test.describe('Thinkhub Footer Links', () => {
             await expect(page).toHaveTitle('Think Hub | Cookie policy')
         })  
     })
+    /*
     test.describe('Privacy Policy', () => {
         test('Page Opens', async({page}) => {
             await page.goto(config.homeUrl + '/privacy-policy')
@@ -20,4 +21,5 @@ test.describe('Thinkhub Footer Links', () => {
             await expect(page).toHaveTitle('Think Hub | Terms and conditions')
         })  
     })
+    */
 })

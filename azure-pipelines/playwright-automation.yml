@@ -20,7 +20,8 @@ stages:
       - template: playwright-template.yml
         parameters:
           BASE_URL: ${{ variables.DevURL }}
-          TEST_USER_PASSWORD: ${{ variables.TEST_USER_PASSWORD }}
+        env:
+          TEST_USER_PASSWORD: $(TEST_USER_PASSWORD)
  # - stage: Prod
  #   displayName: 'Run Automation Test - Prod'
  #   dependsOn: []
