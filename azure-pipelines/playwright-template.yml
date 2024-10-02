@@ -20,7 +20,9 @@ jobs:
       - script: |
           npm ci
         displayName: "NPM Install"
-
+      - script: |
+          npm install dotenv
+        displayName: Install dotenv
       - script: |
           npx playwright install --with-deps
         displayName: "Playwright Install"
