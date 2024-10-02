@@ -6,7 +6,7 @@ const env = process.env['APP'] ?? 'app'
 /**
  * @see https://playwright.dev/docs/test-configuration
  */
-const isCI = !!process.env.CI;
+
 
 Object.assign(global, {
   BASE_URL: process.env.BASE_URL ?? 'https://playwright.dev/',

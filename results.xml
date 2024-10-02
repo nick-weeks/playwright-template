@@ -1,10 +1,6 @@
-<testsuites id="" name="" tests="3" failures="0" skipped="0" errors="0" time="19.363871999999972">
-<testsuite name="app/example.spec.ts" timestamp="2024-10-02T11:37:46.290Z" hostname="chromium" tests="3" failures="0" skipped="0" time="18.051" errors="0">
-<testcase name="Thinkhub Footer Links › Cookie Policy › Page Opens" classname="app/example.spec.ts" time="6.452">
-</testcase>
-<testcase name="Thinkhub Footer Links › Privacy Policy › Page Opens" classname="app/example.spec.ts" time="5.568">
-</testcase>
-<testcase name="Thinkhub Footer Links › Terms and Conditions › Page Opens" classname="app/example.spec.ts" time="6.031">
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="7.167831999999995">
+<testsuite name="app/example.spec.ts" timestamp="2024-10-02T12:50:16.614Z" hostname="chromium" tests="1" failures="0" skipped="0" time="5.892" errors="0">
+<testcase name="Thinkhub Footer Links › Cookie Policy › Page Opens" classname="app/example.spec.ts" time="5.892">
 </testcase>
 </testsuite>
 </testsuites>

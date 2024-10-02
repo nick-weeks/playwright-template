@@ -8,11 +8,14 @@ import path from 'path';
 
 import type { Config } from './types/config.type';
 const environment = process.env['ENV'] ?? 'develop';
+const isCI = !!process.env.CI;
+
+if(!isCI) {
 // Import the environment variables from the .env file in the tests folder
 dotenv.config({ path: './secrets/' + environment + '.env' });
 // Import the environment variables from the .env file in the root folder
 dotenv.config({ path: path.resolve(__dirname, '..', '..', '.env')});
-
+}
 /**
  * Gets the config based on the environment variables.
  * 

@@ -8,3 +8,9 @@ variables:
   -name: ProdURL
     type: string
     default: 'https://playwright.dev'
+  -name: TEST_USER_EMAIL
+    type: string
+    default: ''
+  -name: TEST_USER_PASSWORD
+    type: string
+    default: ''

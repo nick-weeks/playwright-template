@@ -7,6 +7,5 @@ playwright/.cache/
 /blob-report/
 /playwright/.cache/
 **/**.test.ts-snapshots
-/secrets/**.ts
 /secrets/**.env
 **/.vscode
