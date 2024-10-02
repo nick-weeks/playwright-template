@@ -36,6 +36,8 @@ jobs:
           set PLAYWRIGHT_JUNIT_OUTPUT_NAME=results.xml
           npx playwright test --workers=1
         displayName: "Run Playwright Tests"
+        env:
+          TEST_USER_PASSWORD: $(TEST_USER_PASSWORD)
         continueOnError: true
 
       - task: ArchiveFiles@2
