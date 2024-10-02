@@ -1,8 +1,6 @@
 parameters:
   - name: BASE_URL
     type: string
-  - name: TEST_USER_PASSWORD
-    type: string
 
 jobs:
 
