@@ -20,10 +20,10 @@ stages:
       - template: playwright-template.yml
         parameters:
           BASE_URL: ${{ variables.DevURL }}
-  - stage: Prod
-    displayName: 'Run Automation Test - Prod'
-    dependsOn: []
-    jobs:
-      - template: playwright-template.yml
-        parameters:
-          BASE_URL: ${{ variables.ProdURL }}
+ # - stage: Prod
+ #   displayName: 'Run Automation Test - Prod'
+ #   dependsOn: []
+ #   jobs:
+ #     - template: playwright-template.yml
+ #       parameters:
+ #         BASE_URL: ${{ variables.ProdURL }}

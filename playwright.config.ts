@@ -1,6 +1,8 @@
 // @ts-check
-const { defineConfig, devices } = require('@playwright/test');
+import { defineConfig, devices } from '@playwright/test';
+import config from './config'
 
+const env = process.env['APP'] ?? 'app'
 /**
  * @see https://playwright.dev/docs/test-configuration
  */
@@ -8,9 +10,9 @@ const isCI = !!process.env.CI;
 
 Object.assign(global, {
   BASE_URL: process.env.BASE_URL ?? 'https://playwright.dev/',
-  ENV: process.env.ENVIRONMENT ?? '',
 });
-module.exports = defineConfig({
+
+export default defineConfig({
   testDir: './tests',
   /* Run tests in files in parallel */
   fullyParallel: true,
@@ -36,7 +38,10 @@ module.exports = defineConfig({
         Defaults to 0 (no limit). */
     actionTimeout: 60 * 1000,
     navigationTimeout: 30 * 1000,
-
+    httpCredentials: {
+      username: config.successfulLogin.username,
+      password: config.successfulLogin.password,
+    },
     /* Collect trace when retrying the failed test. 
     See https://playwright.dev/docs/trace-viewer */
     trace: 'off',
