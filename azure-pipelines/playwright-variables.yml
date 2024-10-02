@@ -13,4 +13,4 @@ variables:
     default: ''
   -name: TEST_USER_PASSWORD
     type: string
-    default: ''
+    default: $(TEST_USER_PASSWORD)
