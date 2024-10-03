@@ -11,7 +11,3 @@ variables:
   -name: TEST_USER_EMAIL
     type: string
     default: ''
-  -name: TEST_USER_PASSWORD
-    type: string
-    default: ${testUserPassword}
-    isSecret: true

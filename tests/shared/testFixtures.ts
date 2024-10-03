@@ -21,10 +21,10 @@ type standardFixtures = {
 export const test = base.extend<standardFixtures>({
     page: async ({page, context}, use) => {
         await context.addCookies(COOKIES)
-        //await page.goto(config.homeUrl)
-        //await page.getByRole('textbox',{name: 'Username'}).fill(config.successfulLogin.username)
-        //await page.getByRole('textbox',{name: 'Password'}).fill(config.successfulLogin.password)
-        //await page.getByRole('button', {name: 'Submit'}).click()
+        await page.goto(config.homeUrl)
+        await page.getByRole('textbox',{name: 'Username'}).fill(config.successfulLogin.username)
+        await page.getByRole('textbox',{name: 'Password'}).fill(config.successfulLogin.password)
+        await page.getByRole('button', {name: 'Submit'}).click()
         await use(page);
     },
     testTools: async ({page}, use) => {

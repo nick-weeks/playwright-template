@@ -35,7 +35,6 @@ jobs:
           npx playwright test --workers=1
         displayName: "Run Playwright Tests"
         env:
-          TEST_USER_EMAIL: $(TEST_USER_EMAIL)
           TEST_USER_PASSWORD: $(testUserPassword)
         continueOnError: true
 

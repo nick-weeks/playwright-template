@@ -4,17 +4,11 @@ import config from '../../config';
 test.describe('Thinkhub Footer Links', () => {
     test.describe('Cookie Policy', () => {
         test('Page Opens', async({page}) => {
-            await page.goto(config.homeUrl)
-            await page.getByRole('textbox',{name: 'Username'}).fill(config.successfulLogin.username)
-            console.log(config.successfulLogin.username.length)
-            await page.getByRole('textbox',{name: 'Password'}).fill(process.env['TEST_USER_PASSWORD'])
-            await page.getByRole('button', {name: 'Submit'}).click() 
-            await expect (page).toHaveTitle('Think Hub | Home')  
-            //await page.goto(config.homeUrl + '/cookie-policy')
-            //await expect(page).toHaveTitle('Think Hub | Cookie policy')
+            await page.goto(config.homeUrl + '/cookie-policy')
+            await expect(page).toHaveTitle('Think Hub | Cookie policy')
         })  
     })
-    /*
+    
     test.describe('Privacy Policy', () => {
         test('Page Opens', async({page}) => {
             await page.goto(config.homeUrl + '/privacy-policy')
@@ -27,5 +21,4 @@ test.describe('Thinkhub Footer Links', () => {
             await expect(page).toHaveTitle('Think Hub | Terms and conditions')
         })  
     })
-    */
 })
