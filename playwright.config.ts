@@ -49,7 +49,7 @@ export default defineConfig({
     video: {
       mode: 'off'
     },
-    headless: true,
+    headless: false,
     viewport: { width: 1900, height: 940 },
     launchOptions: {
         slowMo: 500,
