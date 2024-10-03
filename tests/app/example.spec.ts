@@ -6,9 +6,10 @@ test.describe('Thinkhub Footer Links', () => {
         test('Page Opens', async({page}) => {
             await page.goto(config.homeUrl)
             await page.getByRole('textbox',{name: 'Username'}).fill(config.successfulLogin.username)
-            await (page).screenshot()
+            console.log(config.successfulLogin.username)
+            console.log(await page.getByRole('textbox',{name: 'Username'}).allTextContents())
             await page.getByRole('textbox',{name: 'Password'}).fill(config.successfulLogin.password)
-            await (page).screenshot()
+            console.log(await page.getByRole('textbox',{name: 'Password'}).allTextContents())
             await page.getByRole('button', {name: 'Submit'}).click()     
             //await page.goto(config.homeUrl + '/cookie-policy')
             //await expect(page).toHaveTitle('Think Hub | Cookie policy')
