@@ -1,6 +1,6 @@
-<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="13.2045830000001">
-<testsuite name="app/example.spec.ts" timestamp="2024-10-03T11:29:29.275Z" hostname="chromium" tests="1" failures="0" skipped="0" time="12.17" errors="0">
-<testcase name="Thinkhub Footer Links › Cookie Policy › Page Opens" classname="app/example.spec.ts" time="12.17">
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="12.246202000000048">
+<testsuite name="app/example.spec.ts" timestamp="2024-10-03T11:38:06.945Z" hostname="chromium" tests="1" failures="0" skipped="0" time="11.216" errors="0">
+<testcase name="Thinkhub Footer Links › Cookie Policy › Page Opens" classname="app/example.spec.ts" time="11.216">
 <system-out>
 <![CDATA[{
   BAMF_DESKTOP_FILE_HINT: [32m'/var/lib/snapd/desktop/applications/code_code.desktop'[39m,
@@ -111,9 +111,10 @@
   PW_LIVE_TRACE_STACKS: [32m'undefined'[39m,
   DEBUG_COLORS: [32m'1'[39m,
   PW_TS_ESM_LOADER_ON: [32m'1'[39m,
-  TEST_WORKER_INDEX: [32m'4'[39m,
+  TEST_WORKER_INDEX: [32m'5'[39m,
   TEST_PARALLEL_INDEX: [32m'0'[39m
 }
+[33m32[39m
 ]]>
 </system-out>
 </testcase>
