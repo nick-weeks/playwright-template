@@ -37,7 +37,7 @@ jobs:
         displayName: "Run Playwright Tests"
         env:
           TEST_USER_EMAIL: $(TEST_USER_EMAIL)
-          TEST_USER_PASSWROD: $(testUserPassword)
+          TEST_USER_PASSWORD: $(testUserPassword)
         continueOnError: true
 
       - task: ArchiveFiles@2
