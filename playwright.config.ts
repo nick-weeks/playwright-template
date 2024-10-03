@@ -8,9 +8,6 @@ const env = process.env['APP'] ?? 'app'
  */
 
 
-Object.assign(global, {
-  BASE_URL: process.env.BASE_URL ?? 'https://playwright.dev/',
-});
 
 export default defineConfig({
   testDir: './tests',
@@ -47,9 +44,9 @@ export default defineConfig({
     trace: 'off',
     screenshot: 'only-on-failure',
     video: {
-      mode: 'on'
+      mode: 'off'
     },
-    headless: false,
+    headless: true,
     viewport: { width: 1900, height: 940 },
     launchOptions: {
         slowMo: 500,
@@ -62,7 +59,6 @@ export default defineConfig({
       name: 'chromium',
       use: { ...devices['Desktop Chrome'] },
     },
-      /*
     {
       name: 'firefox',
       use: { ...devices['Desktop Firefox'] },
@@ -72,7 +68,6 @@ export default defineConfig({
       name: 'webkit',
       use: { ...devices['Desktop Safari'] },
     },
-    */
   ],
 
 });
