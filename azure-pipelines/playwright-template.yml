@@ -6,9 +6,6 @@ jobs:
 
   - job: test
     displayName: Run Playwright Tests
-    env:
-      TEST_USER_EMAIL: $(TEST_USER_EMAIL)
-      TEST_USER_PASSWROD: $(TEST_USER_PASSWORD)
     steps:
     
       - download: none
@@ -38,7 +35,8 @@ jobs:
           npx playwright test --workers=1
         displayName: "Run Playwright Tests"
         env:
-          TEST_USER_PASSWORD: $(variable.TEST_USER_PASSWORD)
+          TEST_USER_EMAIL: $(TEST_USER_EMAIL)
+          TEST_USER_PASSWROD: $(TEST_USER_PASSWORD)
         continueOnError: true
 
       - task: ArchiveFiles@2
