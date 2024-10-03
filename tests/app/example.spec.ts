@@ -4,10 +4,8 @@ import config from '../../config';
 test.describe('Thinkhub Footer Links', () => {
     test.describe('Cookie Policy', () => {
         test('Page Opens', async({page}) => {
-            console.log(process.env['TEST_USER_EMAIL'])
-            console.log(process.env['TEST_USER_PASSWORD'])
-         //   await page.goto(config.homeUrl + '/cookie-policy')
-         //   await expect(page).toHaveTitle('Think Hub | Cookie policy')
+           await page.goto(config.homeUrl + '/cookie-policy')
+           await expect(page).toHaveTitle('Think Hub | Cookie policy')
         })  
     })
     /*
