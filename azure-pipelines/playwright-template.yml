@@ -6,6 +6,9 @@ jobs:
 
   - job: test
     displayName: Run Playwright Tests
+    env:
+      TEST_USER_EMAIL: $(TEST_USER_EMAIL)
+      TEST_USER_PASSWROD: $(TEST_USER_PASSWORD)
     steps:
     
       - download: none
@@ -31,6 +34,7 @@ jobs:
           set BASE_URL=${{ parameters.BASE_URL }}
           set CI=true
           set PLAYWRIGHT_JUNIT_OUTPUT_NAME=results.xml
+          echo ${{TEST_USER_EMAIL}}
           npx playwright test --workers=1
         displayName: "Run Playwright Tests"
         env:
