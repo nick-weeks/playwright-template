@@ -1,46 +1,119 @@
-<testsuites id="" name="" tests="1" failures="1" skipped="0" errors="0" time="8.747111999999964">
-<testsuite name="app/example.spec.ts" timestamp="2024-10-03T11:16:25.760Z" hostname="chromium" tests="1" failures="1" skipped="0" time="7.436" errors="0">
-<testcase name="Thinkhub Footer Links › Cookie Policy › Page Opens" classname="app/example.spec.ts" time="7.436">
-<failure message="example.spec.ts:6:13 Page Opens" type="FAILURE">
-<![CDATA[  [chromium] › app/example.spec.ts:6:13 › Thinkhub Footer Links › Cookie Policy › Page Opens ───────
-
-    Error: expect(locator).toHaveTitle(expected)
-
-    Locator: locator(':root')
-    Expected string: "Thinkhub | Home"
-    Received string: "Think Hub | Home"
-    Call log:
-      - expect.toHaveTitle with timeout 5000ms
-      - waiting for locator(':root')
-      -   locator resolved to <html lang="en">…</html>
-      -   unexpected value "Think Hub | Home"
-      -   locator resolved to <html lang="en">…</html>
-      -   unexpected value "Think Hub | Home"
-      -   locator resolved to <html lang="en">…</html>
-      -   unexpected value "Think Hub | Home"
-      -   locator resolved to <html lang="en">…</html>
-      -   unexpected value "Think Hub | Home"
-      -   locator resolved to <html lang="en">…</html>
-      -   unexpected value "Think Hub | Home"
-      -   locator resolved to <html lang="en">…</html>
-      -   unexpected value "Think Hub | Home"
-      -   locator resolved to <html lang="en">…</html>
-      -   unexpected value "Think Hub | Home"
-
-
-      10 |             await page.getByRole('textbox',{name: 'Password'}).fill(config.successfulLogin.password)
-      11 |             await page.getByRole('button', {name: 'Submit'}).click() 
-    > 12 |             await expect (page).toHaveTitle('Thinkhub | Home')  
-         |                                 ^
-      13 |             //await page.goto(config.homeUrl + '/cookie-policy')
-      14 |             //await expect(page).toHaveTitle('Think Hub | Cookie policy')
-      15 |         })  
-
-        at /home/nick-weeks/codeDevelopment/azuredevop-playwright-test/tests/app/example.spec.ts:12:33
-]]>
-</failure>
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="13.2045830000001">
+<testsuite name="app/example.spec.ts" timestamp="2024-10-03T11:29:29.275Z" hostname="chromium" tests="1" failures="0" skipped="0" time="12.17" errors="0">
+<testcase name="Thinkhub Footer Links › Cookie Policy › Page Opens" classname="app/example.spec.ts" time="12.17">
 <system-out>
-<![CDATA[Pumpkinloungeoverall106*
+<![CDATA[{
+  BAMF_DESKTOP_FILE_HINT: [32m'/var/lib/snapd/desktop/applications/code_code.desktop'[39m,
+  CHROME_DESKTOP: [32m'code-url-handler.desktop'[39m,
+  DBUS_SESSION_BUS_ADDRESS: [32m'unix:path=/run/user/1000/bus'[39m,
+  DEBUGINFOD_URLS: [32m'https://debuginfod.ubuntu.com '[39m,
+  DESKTOP_SESSION: [32m'ubuntu'[39m,
+  DISPLAY: [32m':0'[39m,
+  ELECTRON_NO_ATTACH_CONSOLE: [32m'1'[39m,
+  GDK_BACKEND: [32m'x11'[39m,
+  GDK_PIXBUF_MODULEDIR: [32m'/snap/code/169/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders'[39m,
+  GDK_PIXBUF_MODULE_FILE: [32m'/home/nick-weeks/snap/code/common/.cache/gdk-pixbuf-loaders.cache'[39m,
+  GDMSESSION: [32m'ubuntu'[39m,
+  GIO_LAUNCHED_DESKTOP_FILE: [32m'/var/lib/snapd/desktop/applications/code_code.desktop'[39m,
+  GIO_LAUNCHED_DESKTOP_FILE_PID: [32m'14537'[39m,
+  GIO_MODULE_DIR: [32m'/home/nick-weeks/snap/code/common/.cache/gio-modules'[39m,
+  GJS_DEBUG_OUTPUT: [32m'stderr'[39m,
+  GJS_DEBUG_TOPICS: [32m'JS ERROR;JS LOG'[39m,
+  GNOME_DESKTOP_SESSION_ID: [32m'this-is-deprecated'[39m,
+  GNOME_SETUP_DISPLAY: [32m':1'[39m,
+  GNOME_SHELL_SESSION_MODE: [32m'ubuntu'[39m,
+  GSETTINGS_SCHEMA_DIR: [32m'/home/nick-weeks/snap/code/169/.local/share/glib-2.0/schemas'[39m,
+  GSM_SKIP_SSH_AGENT_WORKAROUND: [32m'true'[39m,
+  GTK_EXE_PREFIX: [32m'/snap/code/169/usr'[39m,
+  GTK_IM_MODULE_FILE: [32m'/home/nick-weeks/snap/code/common/.cache/immodules/immodules.cache'[39m,
+  GTK_MODULES: [32m'gail:atk-bridge'[39m,
+  GTK_PATH: [32m'/snap/code/169/usr/lib/x86_64-linux-gnu/gtk-3.0'[39m,
+  HOME: [32m'/home/nick-weeks'[39m,
+  IM_CONFIG_CHECK_ENV: [32m'1'[39m,
+  IM_CONFIG_PHASE: [32m'1'[39m,
+  INVOCATION_ID: [32m'0ca430d48c244207b21dadae1685a23d'[39m,
+  JOURNAL_STREAM: [32m'8:20127'[39m,
+  LANG: [32m'en_GB.UTF-8'[39m,
+  LANGUAGE: [32m'en_GB:en'[39m,
+  LESSCLOSE: [32m'/usr/bin/lesspipe %s %s'[39m,
+  LESSOPEN: [32m'| /usr/bin/lesspipe %s'[39m,
+  LOCPATH: [32m'/snap/code/169/usr/lib/locale'[39m,
+  LOGNAME: [32m'nick-weeks'[39m,
+  MANAGERPID: [32m'1860'[39m,
+  MEMORY_PRESSURE_WATCH: [32m'/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.Shell@wayland.service/memory.pressure'[39m,
+  MEMORY_PRESSURE_WRITE: [32m'c29tZSAyMDAwMDAgMjAwMDAwMAA='[39m,
+  NIX_PATH: [32m'nixpkgs=/nix/var/nix/profiles/per-user/nick-weeks/channels/nixpkgs:/nix/var/nix/profiles/per-user/nick-weeks/channels'[39m,
+  NIX_PROFILES: [32m'/nix/var/nix/profiles/default /home/nick-weeks/.nix-profile'[39m,
+  NIX_REMOTE: [32m'daemon'[39m,
+  NIX_SSL_CERT_FILE: [32m'/etc/ssl/certs/ca-certificates.crt'[39m,
+  NVM_BIN: [32m'/home/nick-weeks/.nvm/versions/node/v22.0.0/bin'[39m,
+  NVM_DIR: [32m'/home/nick-weeks/.nvm'[39m,
+  NVM_INC: [32m'/home/nick-weeks/.nvm/versions/node/v22.0.0/include/node'[39m,
+  ORIGINAL_XDG_CURRENT_DESKTOP: [32m'ubuntu:GNOME'[39m,
+  PATH: [32m'/home/nick-weeks/.nix-profile/bin:/home/nick-weeks/.local/bin:/home/nick-weeks/.nvm/versions/node/v22.0.0/bin:/home/nick-weeks/.nix-profile/bin:/home/nick-weeks/.local/bin:/home/nick-weeks/.nix-profile/bin:/nix/var/nix/profiles/default/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/nick-weeks/.local/bin:/snap/bin'[39m,
+  PWD: [32m'/home/nick-weeks'[39m,
+  QT_ACCESSIBILITY: [32m'1'[39m,
+  QT_IM_MODULE: [32m'ibus'[39m,
+  SESSION_MANAGER: [32m'local/nickweeks-ThinkPad-T490:@/tmp/.ICE-unix/2395,unix/nickweeks-ThinkPad-T490:/tmp/.ICE-unix/2395'[39m,
+  SHELL: [32m'/bin/bash'[39m,
+  SHLVL: [32m'0'[39m,
+  SNAP: [32m'/snap/code/169'[39m,
+  SNAP_ARCH: [32m'amd64'[39m,
+  SNAP_COMMON: [32m'/var/snap/code/common'[39m,
+  SNAP_CONTEXT: [32m'qv0srmTJOjyCnOFQGd1IfZ4I4eFp1pvMcAZl0CuB6YXlRHkVHUfM'[39m,
+  SNAP_COOKIE: [32m'qv0srmTJOjyCnOFQGd1IfZ4I4eFp1pvMcAZl0CuB6YXlRHkVHUfM'[39m,
+  SNAP_DATA: [32m'/var/snap/code/169'[39m,
+  SNAP_EUID: [32m'1000'[39m,
+  SNAP_INSTANCE_NAME: [32m'code'[39m,
+  SNAP_LAUNCHER_ARCH_TRIPLET: [32m'x86_64-linux-gnu'[39m,
+  SNAP_LIBRARY_PATH: [32m'/var/lib/snapd/lib/gl:/var/lib/snapd/lib/gl32:/var/lib/snapd/void'[39m,
+  SNAP_NAME: [32m'code'[39m,
+  SNAP_REAL_HOME: [32m'/home/nick-weeks'[39m,
+  SNAP_REVISION: [32m'169'[39m,
+  SNAP_UID: [32m'1000'[39m,
+  SNAP_USER_COMMON: [32m'/home/nick-weeks/snap/code/common'[39m,
+  SNAP_USER_DATA: [32m'/home/nick-weeks/snap/code/169'[39m,
+  SNAP_VERSION: [32m'38c31bc7'[39m,
+  SSH_AUTH_SOCK: [32m'/run/user/1000/keyring/ssh'[39m,
+  SYSTEMD_EXEC_PID: [32m'2521'[39m,
+  USER: [32m'nick-weeks'[39m,
+  USERNAME: [32m'nick-weeks'[39m,
+  VSCODE_AMD_ENTRYPOINT: [32m'vs/workbench/api/node/extensionHostProcess'[39m,
+  VSCODE_CLI: [32m'1'[39m,
+  VSCODE_CODE_CACHE_PATH: [32m'/home/nick-weeks/.config/Code/CachedData/38c31bc77e0dd6ae88a4e9cc93428cc27a56ba40'[39m,
+  VSCODE_CRASH_REPORTER_PROCESS_TYPE: [32m'extensionHost'[39m,
+  VSCODE_CWD: [32m'/home/nick-weeks'[39m,
+  VSCODE_HANDLES_UNCAUGHT_ERRORS: [32m'true'[39m,
+  VSCODE_IPC_HOOK: [32m'/run/user/1000/vscode-c1ad45c6-1.93-main.sock'[39m,
+  VSCODE_NLS_CONFIG: [32m'{"userLocale":"en-gb","osLocale":"en-gb","resolvedLanguage":"en","defaultMessagesFile":"/snap/code/169/usr/share/code/resources/app/out/nls.messages.json","locale":"en-gb","availableLanguages":{}}'[39m,
+  VSCODE_PID: [32m'14585'[39m,
+  WAYLAND_DISPLAY: [32m'wayland-0'[39m,
+  XAUTHORITY: [32m'/run/user/1000/.mutter-Xwaylandauth.XZ1YU2'[39m,
+  XDG_CONFIG_DIRS: [32m'/etc/xdg/xdg-ubuntu:/etc/xdg'[39m,
+  XDG_CONFIG_DIRS_VSCODE_SNAP_ORIG: [32m'/etc/xdg/xdg-ubuntu:/etc/xdg'[39m,
+  XDG_CURRENT_DESKTOP: [32m'Unity'[39m,
+  XDG_DATA_DIRS: [32m'/home/nick-weeks/snap/code/169/.local/share:/home/nick-weeks/snap/code/169:/snap/code/169/usr/share:/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop:/home/nick-weeks/.nix-profile/share:/nix/var/nix/profiles/default/share:/home/nick-weeks/.nix-profile/share:/nix/var/nix/profiles/default/share'[39m,
+  XDG_DATA_DIRS_VSCODE_SNAP_ORIG: [32m'/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop:/home/nick-weeks/.nix-profile/share:/nix/var/nix/profiles/default/share'[39m,
+  XDG_MENU_PREFIX: [32m'gnome-'[39m,
+  XDG_RUNTIME_DIR: [32m'/run/user/1000'[39m,
+  XDG_SESSION_CLASS: [32m'user'[39m,
+  XDG_SESSION_DESKTOP: [32m'ubuntu'[39m,
+  XDG_SESSION_TYPE: [32m'wayland'[39m,
+  XMODIFIERS: [32m'@im=ibus'[39m,
+  _: [32m'/snap/code/169/usr/share/code/code'[39m,
+  ELECTRON_RUN_AS_NODE: [32m'1'[39m,
+  VSCODE_L10N_BUNDLE_LOCATION: [32m''[39m,
+  APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL: [32m'1'[39m,
+  FORCE_COLOR: [32m'1'[39m,
+  BROWSERSLIST_IGNORE_OLD_DATA: [32m'true'[39m,
+  TEST_USER_EMAIL: [32m'nicholas.weeks@rs-components.com'[39m,
+  TEST_USER_PASSWORD: [32m'Pumpkinloungeoverall106*'[39m,
+  PW_LIVE_TRACE_STACKS: [32m'undefined'[39m,
+  DEBUG_COLORS: [32m'1'[39m,
+  PW_TS_ESM_LOADER_ON: [32m'1'[39m,
+  TEST_WORKER_INDEX: [32m'4'[39m,
+  TEST_PARALLEL_INDEX: [32m'0'[39m
+}
 ]]>
 </system-out>
 </testcase>
