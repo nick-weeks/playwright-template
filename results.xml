@@ -1,6 +1,12 @@
-<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="8.775657000000123">
-<testsuite name="app/example.spec.ts" timestamp="2024-10-02T13:10:36.623Z" hostname="chromium" tests="1" failures="0" skipped="0" time="7.618" errors="0">
-<testcase name="Thinkhub Footer Links › Cookie Policy › Page Opens" classname="app/example.spec.ts" time="7.618">
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="11.358376000000163">
+<testsuite name="app/example.spec.ts" timestamp="2024-10-03T11:09:23.546Z" hostname="chromium" tests="1" failures="0" skipped="0" time="10.207" errors="0">
+<testcase name="Thinkhub Footer Links › Cookie Policy › Page Opens" classname="app/example.spec.ts" time="10.207">
+<system-out>
+<![CDATA[nicholas.weeks@rs-components.com
+[ [32m''[39m ]
+[ [32m''[39m ]
+]]>
+</system-out>
 </testcase>
 </testsuite>
 </testsuites>
