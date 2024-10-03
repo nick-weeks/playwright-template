@@ -1,10 +1,46 @@
-<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="11.358376000000163">
-<testsuite name="app/example.spec.ts" timestamp="2024-10-03T11:09:23.546Z" hostname="chromium" tests="1" failures="0" skipped="0" time="10.207" errors="0">
-<testcase name="Thinkhub Footer Links › Cookie Policy › Page Opens" classname="app/example.spec.ts" time="10.207">
+<testsuites id="" name="" tests="1" failures="1" skipped="0" errors="0" time="8.747111999999964">
+<testsuite name="app/example.spec.ts" timestamp="2024-10-03T11:16:25.760Z" hostname="chromium" tests="1" failures="1" skipped="0" time="7.436" errors="0">
+<testcase name="Thinkhub Footer Links › Cookie Policy › Page Opens" classname="app/example.spec.ts" time="7.436">
+<failure message="example.spec.ts:6:13 Page Opens" type="FAILURE">
+<![CDATA[  [chromium] › app/example.spec.ts:6:13 › Thinkhub Footer Links › Cookie Policy › Page Opens ───────
+
+    Error: expect(locator).toHaveTitle(expected)
+
+    Locator: locator(':root')
+    Expected string: "Thinkhub | Home"
+    Received string: "Think Hub | Home"
+    Call log:
+      - expect.toHaveTitle with timeout 5000ms
+      - waiting for locator(':root')
+      -   locator resolved to <html lang="en">…</html>
+      -   unexpected value "Think Hub | Home"
+      -   locator resolved to <html lang="en">…</html>
+      -   unexpected value "Think Hub | Home"
+      -   locator resolved to <html lang="en">…</html>
+      -   unexpected value "Think Hub | Home"
+      -   locator resolved to <html lang="en">…</html>
+      -   unexpected value "Think Hub | Home"
+      -   locator resolved to <html lang="en">…</html>
+      -   unexpected value "Think Hub | Home"
+      -   locator resolved to <html lang="en">…</html>
+      -   unexpected value "Think Hub | Home"
+      -   locator resolved to <html lang="en">…</html>
+      -   unexpected value "Think Hub | Home"
+
+
+      10 |             await page.getByRole('textbox',{name: 'Password'}).fill(config.successfulLogin.password)
+      11 |             await page.getByRole('button', {name: 'Submit'}).click() 
+    > 12 |             await expect (page).toHaveTitle('Thinkhub | Home')  
+         |                                 ^
+      13 |             //await page.goto(config.homeUrl + '/cookie-policy')
+      14 |             //await expect(page).toHaveTitle('Think Hub | Cookie policy')
+      15 |         })  
+
+        at /home/nick-weeks/codeDevelopment/azuredevop-playwright-test/tests/app/example.spec.ts:12:33
+]]>
+</failure>
 <system-out>
-<![CDATA[nicholas.weeks@rs-components.com
-[ [32m''[39m ]
-[ [32m''[39m ]
+<![CDATA[Pumpkinloungeoverall106*
 ]]>
 </system-out>
 </testcase>
