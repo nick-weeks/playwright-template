@@ -1,8 +1,12 @@
+//Page and expect are imported here from @playwright/test, instead of at the top of the test file.
 import type { Page} from '@playwright/test'
 import { expect } from '@playwright/test'
 
 /**
- * standard tools for testing.
+ * This file contains standard tools for testing. 
+ * This is a list of the most common patterns used in testing and simplifies them for use and readability
+ * Each fixture has a description and that will load in the helper text when used. 
+ * A file containing working examples also exists.
 */
 export class standardTestTools {
 
@@ -139,18 +143,32 @@ async clickCheckBoxByLocator(locator:string) {
  */
 async checkInputText(locator:string, text:string) {
     await expect(this.page.locator(locator)).toHaveValue(text)
-    console.log(locator + 'contains text ' + text)
+    console.log(locator + ' contains text ' + text)
 }
 
+/**
+ * Checks that text exists anywhere on the page and is visible.
+ * @param {string} text The text to search for.
+ */
 async textExistOnPage(text:string) {
     await this.page.getByText(text).isVisible()
 }
 
-async clickByText__AnyRole(text:string,
+/**
+ * Not all links are marked as links in the source code. 
+ * Use this fixture to click any item by its role and the text.
+ * @param {string} text The text to locate the item to click
+ * @param {Parameters<typeof this.page.getByRole>[0]} role The role of the link e.g. button
+ * @param {string} url Optional - Use if the click navigates to a new page to check the Page URL
+ * @param {string} pageTitle Optional - Use if the click navigates to a new page to check the Page Title 
+ */
+async clickLinkByText__AnyRole(text:string,
     role: Parameters<typeof this.page.getByRole>[0] ,url?:string,pageTitle?:string ) {
     await this.page.getByRole(role, {name:text}).click()
-    if(url && pageTitle) {
+    if(url) {
     await expect(this.page).toHaveURL(url)
+    }
+    if(pageTitle) {
     await expect(this.page).toHaveTitle(pageTitle)
     }
 }

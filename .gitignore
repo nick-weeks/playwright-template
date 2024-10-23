@@ -8,4 +8,5 @@ playwright/.cache/
 /playwright/.cache/
 **/**.test.ts-snapshots
 /secrets/**.env
+/secrets/**.ts
 **/.vscode

@@ -1,9 +1,8 @@
-<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="13.930424999999989">
-<testsuite name="app/example.spec.ts" timestamp="2024-10-03T12:44:51.263Z" hostname="chromium" tests="1" failures="0" skipped="0" time="12.89" errors="0">
-<testcase name="Thinkhub Footer Links › Cookie Policy › Page Opens" classname="app/example.spec.ts" time="12.89">
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="4.226219000000507">
+<testsuite name="fixtureExamples.test.ts" timestamp="2024-10-23T12:45:37.583Z" hostname="chromium" tests="1" failures="0" skipped="0" time="2.914" errors="0">
+<testcase name="Fixture Examples › Locator Exists" classname="fixtureExamples.test.ts" time="2.914">
 <system-out>
-<![CDATA[[90mundefined[39m
-https://app.dev.rs-thinkhub.com/cookie-policy
+<![CDATA[.learntocodeh1 exists on page
 ]]>
 </system-out>
 </testcase>

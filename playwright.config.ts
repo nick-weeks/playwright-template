@@ -2,7 +2,7 @@
 import { defineConfig, devices } from '@playwright/test';
 import config from './config'
 
-const env = process.env['APP'] ?? 'app'
+const app = process.env['APP'] ?? 'app'
 /**
  * @see https://playwright.dev/docs/test-configuration
  */
@@ -10,7 +10,8 @@ const env = process.env['APP'] ?? 'app'
 
 
 export default defineConfig({
-  testDir: './tests',
+  /* Sets the testDir based on the APP variable */
+  testDir: `./tests/${app}`,
   /* Run tests in files in parallel */
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
@@ -26,7 +27,7 @@ export default defineConfig({
       ['html', {
         open: 'never',
       }],
-    ['junit', {outputFile: 'results.xml'}] //required for Azure DevOps Pipeline
+    ['junit', {outputFile: 'results.xml'}] //required for Pipeline reporting
   ],
   
 
@@ -35,6 +36,7 @@ export default defineConfig({
         Defaults to 0 (no limit). */
     actionTimeout: 60 * 1000,
     navigationTimeout: 30 * 1000,
+    /* Sets any httpCredentials in the browser. This is required for sites like DS*/
     httpCredentials: {
       username: config.successfulLogin.username,
       password: config.successfulLogin.password,

@@ -1,3 +1,4 @@
+//eslint for typescript
 module.exports = {
   env: {
     'browser': true,
