@@ -1,6 +1,6 @@
 # playwright-skeleton
 
-This is a simple setup for Playwright - It does not contain Docker or other installs and is designed for creating tests and easily starting a new project. A skeleton with Docker is available on the Box UK Github.
+This is a simple setup for Playwright - It does not contain Docker or other installs and is designed for creating tests and easily starting a new project.
 
 ## Installation
 
