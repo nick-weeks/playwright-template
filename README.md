@@ -4,9 +4,14 @@ This is a simple setup for Playwright - It does not contain Docker or other inst
 
 ## Installation
 
-If you don't have docker installed, you will need to [install Node.js and npm](https://nodejs.org/). You will also need to install Playwright and it's dependencies.
+If you don't have docker installed, you will need to [install Node.js and npm](https://nodejs.org/). 
+You will also need to install Playwright and it's dependencies if you haven't already.
 ```bash
 npx playwright install --with-deps
+```
+If you already have playwright installed on the device. Run `npm install` to install the correct dependencies.
+```bash
+npm install
 ```
 ## Running Tests
 
