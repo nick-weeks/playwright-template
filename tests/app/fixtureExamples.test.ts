@@ -31,8 +31,9 @@ test.describe('Fixture Examples', () => {
      * On success will output to the console. 
      */
     test('Check Input Text', async({page, testTools}) => {
-        await page.goto('https://www.w3schools.com/html/html_forms.asp')
-        await testTools.checkInputText('#fname','John')
+        await page.goto('https://profile.w3schools.com/signup')
+        await page.getByPlaceholder('email').fill('John')
+        await testTools.checkInputText('//form/div[1]/input[1]','John')
     }) 
 
     /**
