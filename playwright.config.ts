@@ -1,6 +1,6 @@
 // @ts-check
 import { defineConfig, devices } from '@playwright/test';
-import config from './config'
+import config from './config';
 
 const app = process.env['APP'] ?? 'app'
 /**
@@ -49,10 +49,11 @@ export default defineConfig({
       mode: 'off'
     },
     headless: true,
-    viewport: { width: 1900, height: 940 },
+    viewport: { width: 1900, height: 1080 },
     launchOptions: {
         slowMo: 500,
     },
+    ignoreHTTPSErrors: true,
   },
   
   /* Configure projects for major browsers */
@@ -60,15 +61,6 @@ export default defineConfig({
     {
       name: 'chromium',
       use: { ...devices['Desktop Chrome'] },
-    },
-    {
-      name: 'firefox',
-      use: { ...devices['Desktop Firefox'] },
-    },
-
-    {
-      name: 'webkit',
-      use: { ...devices['Desktop Safari'] },
     },
   ],
 

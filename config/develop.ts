@@ -8,7 +8,6 @@ import defaultConfig from './default';
 export default function getDevelopConfig(): Config {
 	return {
 		...defaultConfig,
-		homeUrl: 'https://playwright.dev/', //The develop URL
-		storyBookUrl: '' //A second URl - Usually styleguide or storybook
+		homeUrl: 'https://localhost/', //The develop URL
 	}
 }
