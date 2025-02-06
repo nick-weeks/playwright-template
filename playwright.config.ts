@@ -1,6 +1,6 @@
 // @ts-check
 import { defineConfig, devices } from '@playwright/test';
-import config from './config'
+import config from './config';
 
 const app = process.env['APP'] ?? 'app'
 /**
@@ -35,11 +35,7 @@ export default defineConfig({
     actionTimeout: 20000,
     navigationTimeout: 20000,
     testIdAttribute: 'data-test-id',
-    /* Sets any httpCredentials in the browser. This is required for sites like DS*/
-    httpCredentials: {
-      username: config.successfulLogin.username,
-      password: config.successfulLogin.password,
-    },
+    ignoreHTTPSErrors: true,
     /* Collect trace when retrying the failed test. 
     See https://playwright.dev/docs/trace-viewer */
     trace: 'off',

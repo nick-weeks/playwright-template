@@ -9,6 +9,6 @@ import defaultConfig from "./default";
 export default function getLocalConfig(): Config {
 	return {
 		...defaultConfig,
-		homeUrl: 'https://playwright.dev/' , //Local Url
+		homeUrl: 'https://localhost' , //Local Url
 	}
 }

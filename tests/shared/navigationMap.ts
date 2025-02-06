@@ -296,7 +296,7 @@ export const navigationMap = {
             },
 
             alertFilters: {
-                navigationText: 'alertFilters',
+                navigationText: 'Alert Filters',
                 urlPath: '/settings/filter/alert/mine',
                 locator: '.RoutableTabs__route',
                 nth: 1,
@@ -379,12 +379,19 @@ export const navigationMap = {
 
             },
 
-            coastStation: {
-                navigationText: ' COAST STATION ',
+            coastStations: {
+                navigationText: ' COAST STATIONS ',
                 urlPath: '/system-health/coast',
                 locator: '.SystemHealthButton',
                 nth: 1,
             },
+
+            usersOnline: {
+                navigationText: ' USERS ONLINE ',
+                urlPath: '/settings/users/list',
+                locator: '.SystemHealthButton',
+                nth: 1,
+            }
         },
 
         connect: {

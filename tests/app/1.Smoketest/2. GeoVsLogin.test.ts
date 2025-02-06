@@ -17,7 +17,7 @@ test.describe('Check Nav', () => {
     const navArray = [
         'ALERTS', 'TARGETS', 'COMMS', 'MESSAGES', 'RT', 'DSC', 'RECORDINGS', 'REPORTS', 'CONNECT-OBSERV',
         'CAMERA', 'MULTISCREEN', 'SETTINGS', 'ALERTS & EVENTS', 'FILTERS', 'USERS', 'HEALTH MONITOR',
-        'CONNECT', 'TRANSCEIVERS', 'CONFIGURATION', 'DATA EXTRACTION', 'SENSOR STATIONS',
+        'CONNECT', 'TRANSCEIVERS', 'CONFIGURATION', 'DATA EXTRACTION', 'SENSORS',
         'WEATHER', 'NOTIFICATIONS'
     ]
     for (let i = 0; i < navArray.length; i++) {
