@@ -1,7 +1,7 @@
 //Page and expect are imported here from @playwright/test, instead of at the top of the test file.
 import type { Page} from '@playwright/test'
 import { expect } from '@playwright/test'
-
+import config from '../../config'
 /**
  * This file contains standard tools for testing. 
  * This is a list of the most common patterns used in testing and simplifies them for use and readability
@@ -25,7 +25,6 @@ constructor(public readonly page:Page){
 
 async locatorExists(locator: string) {
     expect(await this.page.locator(locator).count()).toBeGreaterThan(0)
-    console.log(locator + ' exists on page')
 }
 
 /**
@@ -34,9 +33,8 @@ async locatorExists(locator: string) {
  * @param {string} text The text to check exists
  * @param {number} count if the locator exists more than once. Counts start at 0 
 */
-async checkText(locator: string, text: string, count?: number) {
-    await expect(this.page.locator(locator).nth(count ?? 0)).toContainText(text)
-    console.log(locator + ' exists on page containing ' + text)
+async checkText({locator, navigationText, nth}: { locator: string; navigationText: string; nth?:number}) {
+    await expect(this.page.locator(locator).nth(nth ?? 0)).toContainText(navigationText)
 }
 
 /**
@@ -45,10 +43,10 @@ async checkText(locator: string, text: string, count?: number) {
  * @param {string} url a unique piece of the url to check. Try to avoid any symbols 
  * @param {string} pageTitle The new page title 
  */
-async clickLinkByText(text: string, url:string, pageTitle: string ) {
-    await this.page.getByRole('link', {name: text, exact: true}).click()
-    await expect(this.page).toHaveURL(new RegExp('.*' + url + '.*'))
-    await expect(this.page).toHaveTitle(pageTitle)
+async clickLinkByText({navigationText, urlPath}:{navigationText: string, urlPath:string} ) {
+    await this.page.getByRole('link', {name: navigationText, exact: true}).click()
+    await expect(this.page).toHaveURL(new RegExp('.*' + urlPath + '.*'))
+    await expect(this.page).toHaveTitle('GeoVS Dashboard')
 }
 
 /**
@@ -166,10 +164,17 @@ async clickLinkByText__AnyRole(text:string,
     role: Parameters<typeof this.page.getByRole>[0] ,url?:string,pageTitle?:string ) {
     await this.page.getByRole(role, {name:text}).click()
     if(url) {
-    await expect(this.page).toHaveURL(url)
+    await expect(this.page).toHaveURL(new RegExp('.*' + url + '.*'))
     }
     if(pageTitle) {
     await expect(this.page).toHaveTitle(pageTitle)
     }
+}
+
+async loginToGeoVS(username?:string, password?:string) {
+    await this.page.getByTestId('login-username').fill(username ?? config.successfulLogin.username)
+    await this.page.getByTestId('login-password').fill(password ?? config.successfulLogin.password)
+    await this.page.getByRole('button', {name: 'Login'}).click()
+    await expect(this.page).toHaveURL(`${config.homeUrl}/alert/my-alerts?page=0`,{timeout:10000})
 }
 }

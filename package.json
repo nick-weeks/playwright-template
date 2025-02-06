@@ -4,7 +4,7 @@
   "description": "Connecting Azure Devops to Playwright Tests without Visual Studio",
   "main": "index.js",
   "scripts": {
-    "test":"npx playwright test --workers=1"  
+    "test": "npx playwright test --workers=1"
   },
   "keywords": [],
   "author": "",
@@ -12,5 +12,8 @@
   "devDependencies": {
     "@playwright/test": "^1.47.2",
     "@types/node": "^22.7.3"
+  },
+  "dependencies": {
+    "typescript": "^5.7.3"
   }
 }

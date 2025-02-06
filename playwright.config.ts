@@ -17,25 +17,24 @@ export default defineConfig({
   /* Fail the build on CI if you accidentally left test.only in the source code. */
   forbidOnly: !!process.env.CI,
   /* Retry on CI only */
-  retries: process.env.CI ? 2 : 0,
+  retries:2,
   /* Opt out of parallel tests on CI. */
-  workers: process.env.CI ? 1 : undefined,
+  workers: process.env.CI ? 1 : 4,
 
   /* Reporter to use. See https://playwright.dev/docs/test-reporters 
   Set to:'never', change to 'always' to launch report automatically after execution */
   reporter: [ 
-      ['html', {
-        open: 'never',
-      }],
-    ['junit', {outputFile: 'results.xml'}] //required for Pipeline reporting
+      ['html', { open: 'never',}],
+      ['list']
   ],
-  
-
+  timeout: 30000,
+  expect: { timeout: 20000 },
   use: {
     /* Maximum time each action such as `click()` can take. 
         Defaults to 0 (no limit). */
-    actionTimeout: 60 * 1000,
-    navigationTimeout: 30 * 1000,
+    actionTimeout: 20000,
+    navigationTimeout: 20000,
+    testIdAttribute: 'data-test-id',
     /* Sets any httpCredentials in the browser. This is required for sites like DS*/
     httpCredentials: {
       username: config.successfulLogin.username,
@@ -50,26 +49,26 @@ export default defineConfig({
     },
     headless: true,
     viewport: { width: 1900, height: 940 },
-    launchOptions: {
-        slowMo: 500,
-    },
   },
   
   /* Configure projects for major browsers */
   projects: [
+    /*
     {
       name: 'chromium',
       use: { ...devices['Desktop Chrome'] },
     },
+    */
     {
       name: 'firefox',
       use: { ...devices['Desktop Firefox'] },
     },
-
+    /*
     {
       name: 'webkit',
       use: { ...devices['Desktop Safari'] },
     },
+    */
   ],
 
 });

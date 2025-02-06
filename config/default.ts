@@ -11,8 +11,8 @@ const defaultConfig: Config = {
 	homeUrl: '', //Sets homeUrl to blank as default
 	storyBookUrl: '', //Sets a second Url to blank as default. In this example it is the url for StoryBook
 	successfulLogin: {
-		username: process.env['TEST_USER_EMAIL'] ?? '', //Either sets username to the Email defined in the relevant .env file or sets it to blank
-		password: process.env['TEST_USER_PASSWORD'] ?? '', //Either sets Password to the Password defined in the relevant .env file or sets it to blank
+		username: process.env['TEST_USER_EMAIL'] ?? 'Sysadmin', //Either sets username to the Email defined in the relevant .env file or sets it to blank
+		password: process.env['TEST_USER_PASSWORD'] ?? 'password', //Either sets Password to the Password defined in the relevant .env file or sets it to blank
 	},
 }
 

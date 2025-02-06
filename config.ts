@@ -1,6 +1,6 @@
 //All set up is configured on this page. All config files are imported including those from .env
 //Based on the ENV variable used, the correct config will be used for the test suite.
-import getDevelopConfig from "./config/develop";
+import getAbbieRcc1Config from "./config/abbiercc1";
 import getLocalConfig from "./config/local";
 import getPreProdConfig from "./config/preprod";
 import getProductionConfig from "./config/production";
@@ -10,7 +10,7 @@ import dotenv from 'dotenv';
 import path from 'path';
 
 import type { Config } from './types/config.type'; //imports config types
-const environment = process.env['ENV'] ?? 'develop'; //sets environment to ENV variable or develop
+const environment = process.env['ENV'] ?? 'abbiercc1'; //sets environment to ENV variable or develop
 const isCI = !!process.env.CI; //Checks if the environment is CI
 
 if(!isCI) { //import .env if environment is not CI. If it is secrets should be stored in a vault.
@@ -32,8 +32,8 @@ function getConfig(): Config {
 			return getProductionConfig();
 		case 'preprod':
 			return getPreProdConfig();
-		case 'develop':
-			return getDevelopConfig();
+		case 'abbiercc1':
+			return getAbbieRcc1Config();
 		case 'local':
 			return getLocalConfig()
 		default:
